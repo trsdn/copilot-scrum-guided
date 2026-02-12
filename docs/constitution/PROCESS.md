@@ -110,28 +110,6 @@ The agent operates as Scrum Master and development team but **never proceeds wit
 | Create issues for discovered work | Label + add to backlog, inform PO |
 | Agent/skill improvements | Propose in retro, PO approves |
 
-### Using ask_user Tool
-
-The agent uses `ask_user` throughout to get PO input:
-
-```
-# During planning
-ask_user: "Which of these issues should go into Sprint N?"
-  choices: ["All 7 recommended", "Only high priority (3)", "Let me pick individually"]
-
-# During sprint start
-ask_user: "Here's the execution plan. Ready to start?"
-  choices: ["Go", "Reorder first", "Remove an issue"]
-
-# During huddles
-ask_user: "Issue #N is done. Is the plan still valid?"
-  choices: ["Continue as planned", "Reprioritize", "Stop sprint"]
-
-# During review
-ask_user: "Do you accept these deliverables?"
-  choices: ["Accepted", "Accepted with notes", "Changes requested"]
-```
-
 ---
 
 ## Sprint Ceremonies
@@ -172,8 +150,6 @@ Start with 5-7 issues per sprint. Adjust based on velocity data in `docs/sprints
 | Research | `research-agent` | Sonnet | Synthesis |
 | Documentation | `documentation-agent` | Sonnet | Technical writing |
 | Security audit | `security-reviewer` | Sonnet | Vulnerability analysis |
-
-**Rule**: `task` (Haiku) is ONLY for running commands. All creative/coding work MUST use a custom agent or `general-purpose` (Sonnet).
 
 ---
 

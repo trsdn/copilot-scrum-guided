@@ -97,6 +97,30 @@ Install the [ntfy app](https://ntfy.sh) on your phone and subscribe to your topi
 | `/sprint-review` | Sprint Review | Agent presents deliverables → **PO accepts or rejects** |
 | `/sprint-retro` | Sprint Retro | Interactive retrospective → **PO contributes + approves action items** |
 
+## How PO Interaction Works
+
+The agent uses the `ask_user` tool throughout ceremonies to get PO input. Here are examples of what that looks like in practice:
+
+```
+# During planning
+ask_user: "Which of these issues should go into Sprint N?"
+  choices: ["All 7 recommended", "Only high priority (3)", "Let me pick individually"]
+
+# During sprint start
+ask_user: "Here's the execution plan. Ready to start?"
+  choices: ["Go", "Reorder first", "Remove an issue"]
+
+# During huddles
+ask_user: "Issue #N is done. Is the plan still valid?"
+  choices: ["Continue as planned", "Reprioritize", "Stop sprint"]
+
+# During review
+ask_user: "Do you accept these deliverables?"
+  choices: ["Accepted", "Accepted with notes", "Changes requested"]
+```
+
+The PO never needs to type complex commands — the agent presents multiple-choice options at every consent gate. This keeps the interaction efficient while ensuring the PO stays in control.
+
 ## When to Use This vs Autonomous
 
 | Use **Guided** (this template) when... | Use **Autonomous** when... |
