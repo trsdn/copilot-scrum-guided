@@ -78,10 +78,21 @@ Before claiming work is complete, fixed, or passing:
 
 | Issue | Workaround |
 |-------|------------|
-| Agents sometimes describe code instead of creating files | For new modules, write files directly |
+| Custom agents only have `edit` + `view` tools — no `create`, no `bash` | Use `general-purpose` agent type for new file creation, or pre-create empty files before dispatching |
 | Agents may reuse existing class/function names | Specify unique names in the prompt |
 | Agents can't create files in non-existent directories | `mkdir -p` before dispatching |
+| `tools` YAML frontmatter does NOT grant additional tools to sub-agents | Platform limitation — use `general-purpose` with custom instructions in prompt |
 | Agents may report "success" without completing | Verify agent output independently |
+
+### Pre-Creation Pattern (for custom agents needing new files)
+
+```
+1. mkdir -p <target_directory>
+2. Create empty/stub files with `create` tool
+3. Dispatch custom agent: "Edit the file at <path> to contain..."
+```
+
+**Alternative**: Use `general-purpose` agent and include the custom agent's instructions in the prompt.
 
 ## Agent Dispatch Rules
 
