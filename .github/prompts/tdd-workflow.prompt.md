@@ -5,6 +5,8 @@ description: "Test-driven development workflow: write failing tests first, then 
 
 # TDD Workflow
 
+> **When to use**: RECOMMENDED for all feature issues. REQUIRED when the issue has Given/When/Then acceptance criteria. The acceptance criteria on the issue ARE your test specifications.
+
 Write failing tests first, then implement code to make them pass.
 
 ## The TDD Cycle

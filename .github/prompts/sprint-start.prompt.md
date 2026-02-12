@@ -111,6 +111,15 @@ gh issue edit N --remove-label "status:planned" --add-label "status:in-progress"
 git checkout -b <branch-name> main
 ```
 
+### Pre-Implementation Check
+
+Before writing code for each issue:
+1. **Read the acceptance criteria** on the issue — they define "done"
+2. **For new modules**: define the interface first (function signatures, types, contracts) before implementation
+3. **Write test stubs** from the acceptance criteria before writing production code
+
+This is not full spec-driven development — it's just-enough precision to prevent the agent from building the wrong thing.
+
 ### 5b. Implementation Flow
 ```
 implement → lint/type-check → write unit tests → validate → code review → PR → merge

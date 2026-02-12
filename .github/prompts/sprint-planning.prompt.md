@@ -87,6 +87,15 @@ ask_user: "Which of these issues should go into Sprint N?"
 
 If PO says "let me pick individually", present each issue and ask yes/no.
 
+### Acceptance Criteria Gate
+
+Before adding an issue to the sprint:
+1. Does the issue have testable acceptance criteria? If not → write them now, present to PO for approval
+2. For new modules: is there an interface sketch (function signatures, input/output)? If not → propose one
+3. Is the scope boundary clear (what's in, what's out)? If not → clarify with PO
+
+**Never plan an issue that says "improve X" without defining what "improved" means measurably.**
+
 ## Step 7: Define Sprint Goal
 
 After PO selects scope, propose a one-sentence sprint goal:

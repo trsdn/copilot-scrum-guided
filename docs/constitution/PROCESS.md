@@ -33,6 +33,7 @@
 - [ ] Unit tests written (min 3 per feature: happy path, edge case, parameter effect)
 - [ ] Tests verify **actual behavior changes**, not just "runs without error"
 - [ ] If bugfix: regression test that FAILS before fix, PASSES after
+- [ ] Acceptance criteria defined on the issue **before** implementation starts
 - [ ] PR created, code-reviewed, squash-merged
 - [ ] CI green before merge (wait 3-5min, verify with `gh run list`)
 - [ ] Issue closed with summary comment
@@ -156,6 +157,19 @@ Score = Impact × Confidence / Effort (each 1-3)
 | ≥ 4 | `priority:high` |
 | 2-3 | `priority:medium` |
 | < 2 | `priority:low` |
+
+### Issue Precision
+
+Every issue entering a sprint MUST have:
+
+1. **Testable acceptance criteria** — "When X happens, Y should result" not "improve X"
+2. **Interface sketch** (for new modules) — function signatures, input/output types, contracts
+3. **Scope boundary** — what's explicitly OUT of scope
+
+Bad: "Improve the scoring system"
+Good: "Add weighted decay to score_candidates(). Input: list[Candidate], decay_factor: float. Output: sorted list. Acceptance: scores decrease by decay_factor per period. Tests: 3 cases (no decay, 50% decay, full decay)."
+
+The PO and agent agree on acceptance criteria during sprint planning. The agent MUST NOT start implementing an issue that lacks them.
 
 ### Label Flow
 
