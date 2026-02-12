@@ -102,6 +102,11 @@ Before claiming work is complete, fixed, or passing:
 
 **Prefer built-in agents when they suffice.** They have full toolsets (bash, create, grep, glob, edit, view). Only use custom agents when you need their specialized domain knowledge — and remember custom agents only have `edit` + `view` tools.
 
+### Built-in Features
+
+- **Plan mode** (`[[PLAN]]` prefix or Shift+Tab): Creates structured implementation plans before touching code. Use for any multi-step task — analyze codebase, create plan.md with todos, wait for approval before implementing.
+- **SQL database**: Per-session SQLite for todo tracking, batch processing, and structured data.
+
 ### Built-in Agents (full toolset)
 
 | Agent Type | Use For | Tools |
