@@ -100,23 +100,37 @@ Before claiming work is complete, fixed, or passing:
 
 ## Agent Dispatch Rules
 
-**Custom agents only have `edit` + `view` tools — NO `create`, NO `bash`.** For tasks requiring **new file creation**, use `general-purpose` agent type with the custom agent's instructions included in the prompt.
+**Prefer built-in agents when they suffice.** They have full toolsets (bash, create, grep, glob, edit, view). Only use custom agents when you need their specialized domain knowledge — and remember custom agents only have `edit` + `view` tools.
 
-| Task | Agent Type | Tools Available |
-|------|-----------|----------------|
-| Edit existing code | `code-developer` | `edit` + `view` only |
-| Create new files | `general-purpose` | Full toolset (`create`, `bash`, `edit`, `view`, `grep`, `glob`) |
-| Edit existing tests | `test-engineer` | `edit` + `view` only |
-| Create new test files | `general-purpose` | Full toolset — include test-engineer instructions in prompt |
-| Edit existing docs | `documentation-agent` | `edit` + `view` only |
-| Create new docs | `general-purpose` | Full toolset — include documentation-agent instructions in prompt |
-| Code review (read-only) | `code-review` | `edit` + `view` only |
-| Research (read-only) | `research-agent` | `edit` + `view` only |
-| Security audit (read-only) | `security-reviewer` | `edit` + `view` only |
-| Adversarial review (read-only) | `challenger` | `edit` + `view` only |
-| CI fix (needs bash) | `general-purpose` | Include ci-fixer instructions |
-| File search | `explore` (built-in) | `grep` + `glob` + `view` |
-| Running commands | `task` (built-in) | Full CLI tools |
+### Built-in Agents (full toolset)
+
+| Agent Type | Use For | Tools |
+|-----------|---------|-------|
+| `explore` | Codebase search, finding files, answering questions about code | `grep` + `glob` + `view` |
+| `task` | Running commands (tests, builds, lints), pass/fail results | Full CLI tools |
+| `code-review` | Reviewing code changes, PR diffs, spotting bugs | Full CLI tools |
+| `general-purpose` | Multi-step tasks needing full toolset, creating new files | Full toolset (`create`, `bash`, `edit`, `view`, `grep`, `glob`) |
+
+### Custom Agents (edit + view only)
+
+Use custom agents when their domain expertise adds value beyond what built-in agents provide. They can only edit existing files — they cannot create files, run commands, or search.
+
+| Task | Agent Type | Why custom? |
+|------|-----------|-------------|
+| Edit existing code | `code-developer` | Project conventions, architecture awareness |
+| Edit existing tests | `test-engineer` | Test patterns, coverage strategy |
+| Edit existing docs | `documentation-agent` | Doc style, structure conventions |
+| Research topics | `research-agent` | Domain expertise |
+| Security audit | `security-reviewer` | Security checklist, threat model |
+| Adversarial review | `challenger` | Structured devil's advocate |
+| CI diagnosis | `ci-fixer` | CI/CD patterns, log analysis |
+
+### When custom agents need new files
+
+Custom agents **cannot** `create` files. Use one of these patterns:
+
+1. **Pre-create**: `mkdir -p dir/ && create` stub files, then dispatch custom agent to edit them
+2. **General-purpose with instructions**: Use `general-purpose` agent type and include the custom agent's instructions in the prompt
 
 **⛔ CI Gate**: After creating a PR, wait 3-5 minutes for CI. Verify green with `gh run list --branch <branch>` BEFORE merging.
 
