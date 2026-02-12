@@ -138,21 +138,6 @@ Start with 5-7 issues per sprint. Adjust based on velocity data in `docs/sprints
 
 ---
 
-## Agent Dispatch Rules
-
-| Task | Agent | Model | Why |
-|------|-------|-------|-----|
-| Code changes, new modules | `code-developer` | Sonnet | Multi-file reasoning |
-| Writing tests | `test-engineer` | Sonnet | Behavior understanding |
-| Code review | `code-review` (built-in) | Sonnet | Architectural judgment |
-| File search | `explore` (built-in) | Haiku | Pattern matching |
-| Running commands | `task` (built-in) | Haiku | Pass/fail only |
-| Research | `research-agent` | Sonnet | Synthesis |
-| Documentation | `documentation-agent` | Sonnet | Technical writing |
-| Security audit | `security-reviewer` | Sonnet | Vulnerability analysis |
-
----
-
 ## Issue Management
 
 ### GitHub Issues Are the ONLY Task System

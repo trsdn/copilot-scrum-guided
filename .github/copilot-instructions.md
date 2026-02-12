@@ -39,20 +39,6 @@ uv run mypy src/                                  # Type check
 
 Full details in `docs/architecture/ADR.md`. Record all architectural decisions there. Do NOT modify ADRs without explicit PO confirmation.
 
-## GitHub Issues — The Task System
-
-**Issues are the ONLY task tracking system. Do NOT use internal todo lists as a substitute.**
-
-Flow: **Backlog** → **Planned** → **In Progress** → **Validation** → **Done**
-
-### Rules
-
-1. **Before starting work**: Find or create the issue, move it to "In Progress"
-2. **During work**: Comment progress on the issue
-3. **In commits**: Reference issues (`refs #N` or `fixes #N`)
-4. **When done**: Close with a summary comment, move to "Done"
-5. **Discovered work**: Create a new issue immediately, don't just mention it
-
 ## Sprint Discipline (Scrum Master Role)
 
 **When working on an issue, protect the sprint focus.** If new work is suggested mid-task:
