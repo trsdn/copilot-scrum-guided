@@ -1,0 +1,203 @@
+---
+name: sprint-start
+description: "Present execution plan, wait for PO consent, then begin sprint. Triggers on: 'sprint start', 'start sprint', 'let's begin', 'go', 'start working', 'begin sprint'."
+---
+
+# Sprint Start — PO-Driven
+
+You are the **Scrum Master**. The **human is the Product Owner**.
+
+**Operating model**: PO-driven. You MUST present the execution plan and **WAIT for PO to say "go"** before writing any code.
+
+## Step 1: Gather State
+
+```bash
+git log --oneline -10
+git status
+git stash list
+gh issue list --label "priority:high"
+gh issue list --label "status:in-progress"
+```
+
+Read agent memory for context from last sprint.
+
+## Step 2: Load Sprint Backlog
+
+Load the Planned items from the project board (set during `/sprint-planning`).
+
+Determine the sprint number from `docs/sprints/velocity.md` (increment from last sprint).
+Create SQL todos for all sprint items with dependencies.
+
+## Step 3: Present Execution Plan
+
+**⛔ CONSENT GATE — DO NOT SKIP**
+
+Present the execution plan to the PO:
+
+```markdown
+## Sprint N Execution Plan
+
+### Sprint Goal
+[from planning]
+
+### Execution Order
+1. #A: [Title] — [approach: what agent/method, estimated effort]
+2. #B: [Title] — [approach]
+3. #C: [Title] — [approach]
+...
+
+### Dependencies
+- #B depends on #A (must complete first)
+
+### Quality Gates
+- Every PR: lint + types + tests (min 3)
+- CI green before merge
+- Huddle after each issue (will check in with you)
+
+### Estimated Duration
+Based on velocity: ~X hours for Y issues
+```
+
+Then use `ask_user`:
+
+```
+ask_user: "Here's the execution plan for Sprint N. Ready to start?"
+  choices: [
+    "Go — start execution",
+    "Reorder the issues first",
+    "Remove an issue from scope",
+    "Add an issue to scope",
+    "Not yet — I have questions"
+  ]
+```
+
+**WAIT for PO to say "go" or "start".** Do NOT write any code until PO approves.
+
+If PO wants to reorder, adjust, or ask questions — address their input and ask again.
+
+## Step 4: Create Sprint Log
+
+After PO says "go", create a sprint log:
+
+```bash
+mkdir -p docs/sprints
+cat > docs/sprints/sprint-N-log.md << 'EOF'
+# Sprint N Log — [Date]
+
+**Goal**: [sprint goal]
+**Planned**: [number] issues
+**PO consent**: ✅ Approved
+
+## Huddles
+
+[Huddles will be appended here after each issue completes]
+EOF
+```
+
+## Step 5: Execute (issue by issue)
+
+Send notification:
+```bash
+if [ -n "$NTFY_TOPIC" ]; then
+  curl -s -H "Title: 🚀 Sprint N Starting" -d "Goal: [theme]. Issues: #A, #B, #C..." ntfy.sh/$NTFY_TOPIC
+fi
+```
+
+### 5a. Start Issue
+Move to "In Progress" on the board. Create branch:
+```bash
+git checkout -b <branch-name> main
+```
+
+### 5b. Implementation Flow
+```
+implement → lint/type-check → write unit tests → validate → code review → PR → merge
+```
+
+### 5c. Quality Gates
+
+**⛔ TEST GATE**: Every feature PR MUST include unit tests.
+- Use `test-engineer` agent after implementation, before PR
+- Minimum 3 tests per feature (happy path, edge case, parameter effect)
+- Tests must verify **actual behavior**, not just "runs without error"
+
+**⛔ DEFINITION OF DONE** (see CLAUDE.md for full checklist):
+- Code + lint + types clean
+- Unit tests (min 3, behavior-verifying)
+- PR reviewed + squash-merged
+- Issue closed with summary
+- **Board updated**: Move issue to "Done"
+
+### 5d. 🔄 Interactive Huddle (after each issue completes)
+
+**⛔ PO INTERACTION GATE — DO NOT SKIP**
+
+After each issue completes, present results to the PO and ask for direction.
+
+**1. Comment on the completed issue** (persistent record):
+```bash
+gh issue comment N --body "### Huddle — Sprint X, Issue X/Y done
+
+**Outcome**: [what was delivered]
+**Key learning**: [anything discovered]
+**Next**: #M — [title]"
+```
+
+**2. Append to sprint log** (`docs/sprints/sprint-N-log.md`)
+
+**3. Present to PO and ask for direction:**
+
+```
+ask_user: "Issue #N is done: [brief outcome]. Sprint progress: X/Y issues complete.
+
+Key learning: [anything notable]
+
+Next up: #M — [title]
+
+Is the plan still valid?"
+  choices: [
+    "Continue as planned",
+    "Reprioritize — let's discuss",
+    "Skip the next issue",
+    "Stop the sprint here"
+  ]
+```
+
+**WAIT for PO response.** If PO wants to reprioritize, discuss and adjust.
+
+## Constraints
+
+- **Sub-agents**: ≤2 concurrent (avoid resource exhaustion)
+- **WIP**: 1 issue at a time — finish before starting next
+- **Sprint focus**: Never silently abandon an in-progress issue
+
+## ⛔ Agent Dispatch Rules
+
+**NEVER use the generic `task` agent type (Haiku) for code changes.**
+
+| Task | Agent Type | Model |
+|------|-----------|-------|
+| Code implementation | `code-developer` | Sonnet |
+| Writing tests | `test-engineer` | Sonnet |
+| Code review | `code-review` | Sonnet |
+| Research/docs | `research-agent` / `documentation-agent` | Sonnet |
+| Quick file search | `explore` | Haiku (OK) |
+| Build/test commands | `task` | Haiku (OK) |
+
+**⛔ CI GATE**: After creating a PR, wait 3-5 minutes for CI. Verify green before merging.
+
+## Output Format
+
+```markdown
+## Sprint N — [Date]
+
+### Sprint Backlog (PO approved)
+1. #N: [Title] (priority, approach)
+2. #M: [Title] (priority, approach)
+
+### Progress
+- [X] #N — Done (PR #P)
+- [ ] #M — Next
+```
+
+When all issues are done or PO stops the sprint → inform PO and suggest `/sprint-review`.

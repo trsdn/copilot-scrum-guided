@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Install dependencies
+        run: uv sync --all-extras
+        timeout-minutes: 5
+
+      - name: Check lint
+        run: uv run ruff check src/ tests/
+
+      - name: Check format
+        run: uv run ruff format --check src/ tests/
+
+      - name: Check types
+        run: uv run mypy src/
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Install dependencies
+        run: uv sync --all-extras
+        timeout-minutes: 5
+
+      - name: Run tests
+        run: uv run pytest tests/ -v --timeout=120
+
+  build:
+    name: Build Package
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [lint, test]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Build package
+        run: uv build
