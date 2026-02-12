@@ -36,7 +36,7 @@
 - [ ] PR created, code-reviewed, squash-merged
 - [ ] CI green before merge (wait 3-5min, verify with `gh run list`)
 - [ ] Issue closed with summary comment
-- [ ] Project board updated (issue moved to Done)
+- [ ] Status labels updated (removed on close)
 
 ---
 
@@ -145,7 +145,7 @@ Start with 5-7 issues per sprint. Adjust based on velocity data in `docs/sprints
 - **Before starting work**: Find or create the issue
 - **During work**: Reference issues in commits (`refs #N` or `fixes #N`)
 - **Discovered work**: Create a new issue immediately
-- **After completion**: Close with summary comment, move to Done on board
+- **After completion**: Close with summary comment (closing removes status labels)
 
 ### Prioritization (ICE Scoring)
 
@@ -157,11 +157,26 @@ Score = Impact × Confidence / Effort (each 1-3)
 | 2-3 | `priority:medium` |
 | < 2 | `priority:low` |
 
-### Board Flow
+### Label Flow
 
 ```
-Backlog → Planned → In Progress → Validation → Done
+Open issue (no status label) = Backlog → status:planned → status:in-progress → status:validation → Issue closed = Done
 ```
+
+Sprint grouping uses **Milestones** (`Sprint 1`, `Sprint 2`, etc.) instead of project board columns.
+
+**Label commands:**
+```bash
+gh issue edit N --add-label "status:planned"
+gh issue edit N --remove-label "status:planned" --add-label "status:in-progress"
+gh issue edit N --remove-label "status:in-progress" --add-label "status:validation"
+gh issue close N  # removes status labels
+gh issue edit N --milestone "Sprint X"
+gh issue list --label "status:in-progress"
+gh issue list --milestone "Sprint X"
+```
+
+**Label hygiene**: Ensure closed issues have status labels removed. Open issues should reflect their actual state.
 
 ---
 

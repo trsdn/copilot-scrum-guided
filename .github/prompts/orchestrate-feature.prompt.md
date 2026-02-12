@@ -61,4 +61,4 @@ gh run list --branch feat/<branch-name>
 gh issue close <number> --comment "Implemented in PR #M. [summary]"
 ```
 
-Move issue to "Done" on the project board.
+Remove any remaining status labels (closing the issue signals "Done").

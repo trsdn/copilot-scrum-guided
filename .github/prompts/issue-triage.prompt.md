@@ -90,14 +90,14 @@ How should we proceed?"
 Based on PO's response:
 
 ```bash
-# Apply labels
+# Apply priority label
 gh issue edit <number> --add-label "priority:high"
+
+# Optionally assign to a milestone
+gh issue edit <number> --milestone "Sprint X"
 
 # Close stale issues (only with PO approval)
 gh issue close <number> --comment "Closed during triage — stale >30 days. Reopen if still needed."
-
-# Add to project board
-gh project item-add {{PROJECT_ID}} --owner <owner> --url <issue_url>
 ```
 
 ## Guidelines

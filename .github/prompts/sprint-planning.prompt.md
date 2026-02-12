@@ -11,10 +11,11 @@ You are the **Scrum Master** running sprint planning. The **human is the Product
 
 **No code changes during planning. Only issue management, research, and documentation.**
 
-## Step 1: Review Board State
+## Step 1: Review Issue Status
 
 ```bash
-gh project item-list <PROJECT_NUMBER> --owner <OWNER> --limit 30
+gh issue list --label "status:planned"
+gh issue list --label "status:in-progress"
 gh issue list --label "priority:high"
 gh issue list --label "priority:medium"
 gh issue list --limit 30
@@ -97,16 +98,15 @@ ask_user: "Proposed sprint goal: '[goal]'. Does this capture it?"
 
 Label all sprint items with `sprint:N` (incrementing from last sprint).
 
-## Step 8: Finalize Board
+## Step 8: Finalize Sprint
 
-**MANDATORY**: Move all PO-approved items to Planned on the project board.
+**MANDATORY**: Add `status:planned` label and assign milestone for all PO-approved items.
 
 ```bash
-gh project item-edit --project-id PROJECT_ID --id ITEM_ID \
-  --field-id STATUS_FIELD_ID --single-select-option-id PLANNED_OPTION_ID
+gh issue edit N --add-label "status:planned" --milestone "Sprint X"
 ```
 
-Verify the move by listing the board.
+Verify by listing planned issues: `gh issue list --label "status:planned" --milestone "Sprint X"`
 
 ## Step 9: Present Summary
 
@@ -123,11 +123,11 @@ Verify the move by listing the board.
 ### Dependencies
 - #Y depends on #X
 
-### Board Changes
+### Sprint Assignments
 - Issues triaged: N
 - Issues elaborated: N
 - New issues created: N
-- Moved to Planned: N
+- Labeled status:planned: N
 
 ### Velocity Reference
 Prior sprint: X issues in ~Yh (from docs/sprints/velocity.md)

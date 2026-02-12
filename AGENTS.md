@@ -56,7 +56,6 @@ The human is the **Product Owner**. The agent is the **Scrum Master + Developmen
 | Architect | `@architect` | ADR compliance, system design review |
 | Release Agent | `@release-agent` | Versioning, changelogs, release readiness |
 | Copilot Customization Builder | `@copilot-customization-builder` | Create agents, prompts, instructions |
-| Board Keeper | `@board-keeper` | Project board hygiene |
 | Challenger | `@challenger` | Adversarial review, presents to PO |
 | CI Fixer | `@ci-fixer` | CI/CD failure diagnosis and fix |
 

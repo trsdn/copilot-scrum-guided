@@ -23,7 +23,11 @@ Read any context from the last sprint.
 
 ## Step 2: Load Sprint Backlog
 
-Load the Planned items from the project board (set during `/sprint-planning`).
+Load the Planned items from labels and milestone (set during `/sprint-planning`):
+
+```bash
+gh issue list --milestone "Sprint N" --label "status:planned"
+```
 
 Determine the sprint number from `docs/sprints/velocity.md` (increment from last sprint).
 
@@ -101,8 +105,9 @@ scripts/copilot-notify.sh "🚀 Sprint N Starting" "Goal: [theme]. Issues: #A, #
 ```
 
 ### 5a. Start Issue
-Move to "In Progress" on the board. Create branch:
+Transition to in-progress and create branch:
 ```bash
+gh issue edit N --remove-label "status:planned" --add-label "status:in-progress"
 git checkout -b <branch-name> main
 ```
 
@@ -123,7 +128,7 @@ implement → lint/type-check → write unit tests → validate → code review 
 - Unit tests (min 3, behavior-verifying)
 - PR reviewed + squash-merged
 - Issue closed with summary
-- **Board updated**: Move issue to "Done"
+- **Status labels removed**: `gh issue close N` (removes status labels)
 
 ### 5d. 🔄 Interactive Huddle (after each issue completes)
 

@@ -109,9 +109,9 @@ ask_user: "What are the significant issues? Should we discuss before proceeding?
 ## Step 4: Issue Cleanup
 
 For each issue touched:
-- **DONE** → Close with summary, move to Done on board
-- **Partial** → Comment progress, move back to Planned
-- **Blocked** → Label, document why
+- **DONE** → Close with summary, remove status labels
+- **Partial** → Comment progress, set `status:planned` label
+- **Blocked** → Label `status:blocked`, document why
 
 Create issues for any discovered work:
 ```bash

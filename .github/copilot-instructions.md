@@ -2,7 +2,7 @@
 
 These instructions apply to all Copilot Chat work in this repository.
 
-See `docs/constitution/PROCESS.md` for the full development process constitution (stakeholder model, ceremonies, DoD, ICE scoring, board flow).
+See `docs/constitution/PROCESS.md` for the full development process constitution (stakeholder model, ceremonies, DoD, ICE scoring, label flow).
 
 See `AGENTS.md` for available agents and prompts.
 
@@ -114,7 +114,6 @@ Before claiming work is complete, fixed, or passing:
 | Research (read-only) | `research-agent` | `edit` + `view` only |
 | Security audit (read-only) | `security-reviewer` | `edit` + `view` only |
 | Adversarial review (read-only) | `challenger` | `edit` + `view` only |
-| Board operations (needs bash) | `general-purpose` | Include board-keeper instructions |
 | CI fix (needs bash) | `general-purpose` | Include ci-fixer instructions |
 | File search | `explore` (built-in) | `grep` + `glob` + `view` |
 | Running commands | `task` (built-in) | Full CLI tools |

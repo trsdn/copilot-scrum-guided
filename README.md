@@ -53,10 +53,10 @@ Each phase is triggered manually via slash commands. The agent never auto-procee
 
 - **Same quality infrastructure** as the autonomous variant: ICE scoring, Definition of Done, quality gates, CI/CD
 - **Human control at every phase**: PO drives scope, accepts deliverables, contributes to retros
-- **Specialized agents**: Code developer, test engineer, security reviewer, documentation agent, research agent, architect, challenger, CI fixer, board keeper
+- **Specialized agents**: Code developer, test engineer, security reviewer, documentation agent, research agent, architect, challenger, CI fixer
 - **Push notifications**: ntfy.sh integration for task completion and input needed alerts
 - **Sprint velocity tracking**: Data-driven sprint sizing from historical performance
-- **GitHub Issues as task system**: Project board with Backlog → Planned → In Progress → Done flow
+- **GitHub Issues as task system**: Labels (`status:planned` → `status:in-progress` → `status:validation` → closed) + Milestones for sprint grouping
 
 ## Getting Started
 
@@ -68,9 +68,9 @@ Click **"Use this template"** on GitHub to create a new repository from this tem
 
 Search for `{{PROJECT_NAME}}` and `{{PROJECT_DESCRIPTION}}` in `AGENTS.md`, `.github/copilot-instructions.md`, `pyproject.toml`, and other files. Replace with your project details.
 
-### 3. Set up GitHub Project Board
+### 3. Set up status labels and milestones
 
-Create a GitHub Project board with columns: **Backlog**, **Planned**, **In Progress**, **Validation**, **Done**.
+Create these labels in your repository: `status:planned`, `status:in-progress`, `status:validation`. Create milestones for each sprint (`Sprint 1`, `Sprint 2`, etc.). Issues without a status label are in the backlog; closed issues are done.
 
 ### 4. Configure notifications (optional)
 
@@ -212,8 +212,7 @@ This data drives sprint sizing — the agent presents velocity history when prop
 │   │   ├── release-agent.agent.md
 │   │   ├── copilot-customization-builder.agent.md
 │   │   ├── challenger.agent.md
-│   │   ├── ci-fixer.agent.md
-│   │   └── board-keeper.agent.md
+│   │   └── ci-fixer.agent.md
 │   ├── prompts/                     # Reusable workflow prompts (PO consent gates)
 │   │   ├── sprint-planning.prompt.md
 │   │   ├── sprint-start.prompt.md
