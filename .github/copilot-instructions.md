@@ -25,7 +25,6 @@ See `AGENTS.md` for available agents and prompts.
 - pytest for testing
 - Keep code readable; avoid clever one-liners
 - Preserve existing public APIs unless explicitly asked to change
-- **Python 3.14 compat**: No leading zeros in integer literals
 
 ## Development Principles
 
