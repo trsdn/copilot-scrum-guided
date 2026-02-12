@@ -1,6 +1,6 @@
 ---
 name: sprint-planning
-description: "Triage backlog, score issues, present candidates to PO for scope selection. Triggers on: 'sprint planning', 'plan sprint', 'planning start', 'start planning', 'backlog grooming', 'triage', 'prioritize', 'what should we work on next'."
+description: "PO-driven sprint planning: triage backlog, score ICE, present candidates for PO to select scope."
 ---
 
 # Sprint Planning — PO-Driven
@@ -75,7 +75,7 @@ Present candidates in a table:
 Then ask:
 ask_user: "Which of these issues should go into Sprint N?"
   choices: [
-    "All 7 recommended",
+    "All recommended",
     "Only the top 5",
     "Only high priority issues",
     "Let me pick individually"

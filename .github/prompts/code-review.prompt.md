@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Perform structured code reviews with security, performance, and style checks. Use when reviewing PRs, auditing code changes, or when the user asks for a code review.
+description: "Structured code review with security, performance, and correctness checks."
 ---
 
 # Code Review

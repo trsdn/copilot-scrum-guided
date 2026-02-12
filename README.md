@@ -66,7 +66,7 @@ Click **"Use this template"** on GitHub to create a new repository from this tem
 
 ### 2. Customize placeholders
 
-Search for `{{PROJECT_NAME}}` and `{{PROJECT_DESCRIPTION}}` in `CLAUDE.md`, `pyproject.toml`, and other files. Replace with your project details.
+Search for `{{PROJECT_NAME}}` and `{{PROJECT_DESCRIPTION}}` in `AGENTS.md`, `.github/copilot-instructions.md`, `pyproject.toml`, and other files. Replace with your project details.
 
 ### 3. Set up GitHub Project Board
 
@@ -110,32 +110,35 @@ Install the [ntfy app](https://ntfy.sh) on your phone and subscribe to your topi
 ## Project Structure
 
 ```
-├── CLAUDE.md                          # Main agent instructions (PO-guided model)
-├── .claude/
-│   ├── settings.json                  # Permissions, hooks, skills, agents
-│   ├── hooks/
-│   │   ├── ntfy-notify.sh             # Push notification hook
-│   │   └── session-reminder.sh        # PO-mode reminder
-│   ├── skills/
-│   │   ├── sprint-planning/SKILL.md   # PO-driven planning
-│   │   ├── sprint-start/SKILL.md      # PO-consent execution
-│   │   ├── sprint-review/SKILL.md     # PO-acceptance review
-│   │   ├── sprint-retro/SKILL.md      # Interactive retrospective
-│   │   └── ...                        # Other skills (same as autonomous)
-│   └── agents/
-│       ├── code-developer.md
-│       ├── test-engineer.md
-│       └── ...
-├── docs/
-│   ├── constitution/PROCESS.md        # Guided stakeholder model
-│   ├── architecture/ADR.md            # Architecture decisions
-│   └── sprints/velocity.md            # Velocity tracker
+├── AGENTS.md                        # Project-specific agent instructions
 ├── .github/
-│   ├── workflows/ci.yml               # CI pipeline
-│   ├── ISSUE_TEMPLATE/                # Bug/feature templates
+│   ├── copilot-instructions.md      # Main Copilot instructions (PO-driven model)
+│   ├── agents/                      # Specialized agent definitions
+│   │   ├── code-developer.agent.md
+│   │   ├── test-engineer.agent.md
+│   │   ├── documentation-agent.agent.md
+│   │   ├── security-reviewer.agent.md
+│   │   └── research-agent.agent.md
+│   ├── prompts/                     # Reusable workflow prompts (PO consent gates)
+│   │   ├── sprint-planning.prompt.md
+│   │   ├── sprint-start.prompt.md
+│   │   ├── sprint-review.prompt.md
+│   │   ├── sprint-retro.prompt.md
+│   │   ├── orchestrate-feature.prompt.md
+│   │   ├── orchestrate-bugfix.prompt.md
+│   │   ├── code-review.prompt.md
+│   │   ├── create-pr.prompt.md
+│   │   └── tdd-workflow.prompt.md
+│   ├── workflows/
+│   ├── ISSUE_TEMPLATE/
 │   └── PULL_REQUEST_TEMPLATE.md
-├── Makefile                           # Developer shortcuts
-└── pyproject.toml                     # Python project config
+├── docs/
+│   ├── constitution/PROCESS.md
+│   ├── architecture/ADR.md
+│   └── sprints/velocity.md
+├── scripts/copilot-notify.sh
+├── Makefile
+└── pyproject.toml
 ```
 
 ## License

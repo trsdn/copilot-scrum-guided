@@ -1,6 +1,6 @@
 ---
 name: create-pr
-description: Creates GitHub pull requests with properly formatted titles. Use when creating PRs, submitting changes for review, or when the user says /pr or asks to create a pull request.
+description: "Create GitHub pull requests with conventional commit-style titles."
 ---
 
 # Create Pull Request

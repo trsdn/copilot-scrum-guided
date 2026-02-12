@@ -1,5 +1,13 @@
 ---
 name: research-agent
+description: "Research specialist for investigating topics, analyzing information, and providing evidence-based recommendations."
+tools:
+  - bash
+  - view
+  - grep
+  - glob
+  - web_search
+  - web_fetch
 ---
 
 # Research Agent

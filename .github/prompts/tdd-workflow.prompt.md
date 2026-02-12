@@ -1,9 +1,9 @@
 ---
 name: tdd-workflow
-description: Test-Driven Development workflow - write tests before implementation. Use when implementing features with acceptance criteria, when user says "TDD", "test first", "write tests for this issue", or when starting implementation of a user story.
+description: "Test-driven development workflow: write failing tests first, then implement code to make them pass."
 ---
 
-# TDD Workflow Skill
+# TDD Workflow
 
 Write failing tests first, then implement code to make them pass.
 

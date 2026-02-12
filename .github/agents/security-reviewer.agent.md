@@ -1,5 +1,11 @@
 ---
 name: security-reviewer
+description: "Security reviewer for auditing code for vulnerabilities, credential exposure, and data handling issues."
+tools:
+  - bash
+  - view
+  - grep
+  - glob
 ---
 
 # Security Reviewer Agent

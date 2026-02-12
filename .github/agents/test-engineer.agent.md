@@ -1,5 +1,13 @@
 ---
 name: test-engineer
+description: "Test automation engineer for writing, maintaining, and improving the test suite."
+tools:
+  - bash
+  - edit
+  - create
+  - view
+  - grep
+  - glob
 ---
 
 # Test Engineer Agent

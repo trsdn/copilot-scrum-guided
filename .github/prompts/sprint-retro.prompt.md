@@ -1,6 +1,6 @@
 ---
 name: sprint-retro
-description: "Interactive retrospective with PO contributing observations. Triggers on: 'sprint retro', 'retrospective', 'retro', 'what went well', 'what went wrong', 'how do we improve'."
+description: "Interactive sprint retrospective: PO contributes observations and approves action items."
 ---
 
 # Sprint Retrospective — PO-Driven (Interactive)
@@ -100,7 +100,7 @@ For each problem, propose a concrete fix:
 ### 🔧 Action Items
 | Problem | Proposed Fix | Implementation |
 |---------|-------------|----------------|
-| [Problem] | [Fix] | [How: update skill / create issue / change process] |
+| [Problem] | [Fix] | [How: update prompt / create issue / change process] |
 ```
 
 **⛔ PO APPROVAL GATE**
@@ -118,7 +118,7 @@ ask_user: "Here are the proposed action items. Do you approve these changes?"
 **WAIT for PO approval.** Do NOT implement action items without PO consent.
 
 If PO approves:
-- **Prompt/skill changes**: Implement now as part of the retro
+- **Prompt/agent changes**: Implement now as part of the retro
 - **Code changes**: Create GitHub issues
 - **Process changes**: Document in PROCESS.md (with PO confirmation)
 
@@ -142,24 +142,17 @@ ask_user: "Our velocity this sprint was X issues/hr (vs Y last sprint). Any obse
   ]
 ```
 
-## Step 6: Save Memory
-
-Update agent memory with:
-- Sprint results and velocity
-- Process changes committed
-- Findings that affect future sprints
-
-## Step 7: Process & Tooling Improvements 🔧
+## Step 6: Process & Tooling Improvements 🔧
 
 Review questions:
 1. **Agent gaps**: Did we manually do work that an agent should handle?
 2. **Agent reliability**: Did any sub-agent fail or produce wrong output?
-3. **Skill gaps**: Did we repeat a workflow that should be a skill?
+3. **Prompt gaps**: Did we repeat a workflow that should be a prompt?
 4. **Ceremony friction**: Did any sprint ceremony take too long?
 
 Present findings and proposed changes to PO.
 
-## Step 8: Wrap Up
+## Step 7: Wrap Up
 
 ```
 ask_user: "Sprint N retro is complete. Shall we proceed to planning for Sprint N+1?"

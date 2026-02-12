@@ -1,6 +1,6 @@
 ---
 name: sprint-review
-description: "Present deliverables for PO acceptance or rejection. Triggers on: 'sprint review', 'review sprint', 'what did we deliver', 'demo', 'show results'."
+description: "PO-driven sprint review: present deliverables for PO acceptance or rejection."
 ---
 
 # Sprint Review — PO-Driven
@@ -130,9 +130,7 @@ Move incomplete items back to Planned with notes.
 ## Step 6: Notify
 
 ```bash
-if [ -n "$NTFY_TOPIC" ]; then
-  curl -s -H "Title: 📋 Sprint N Review" -d "Done: X/Y issues. PO: [accepted/changes requested]" ntfy.sh/$NTFY_TOPIC
-fi
+scripts/copilot-notify.sh "📋 Sprint N Review" "Done: X/Y issues. PO: [accepted/changes requested]"
 ```
 
 ## Step 7: Suggest Next Steps

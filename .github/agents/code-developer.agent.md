@@ -1,5 +1,13 @@
 ---
 name: code-developer
+description: "Python developer for improving, extending, and maintaining the codebase following best practices."
+tools:
+  - bash
+  - edit
+  - create
+  - view
+  - grep
+  - glob
 ---
 
 # Code Developer Agent
@@ -33,7 +41,6 @@ You are a Python developer for {{PROJECT_NAME}}. Your role is to improve, extend
 
 ### 1. Understand the Task
 ```bash
-# Read relevant code and existing tests
 cat src/MODULE/FILE.py
 cat tests/test_MODULE.py
 uv run pytest tests/test_MODULE.py -v

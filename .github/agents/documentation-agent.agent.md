@@ -1,5 +1,13 @@
 ---
 name: documentation-agent
+description: "Technical writer for creating and maintaining clear, accurate, and helpful documentation."
+tools:
+  - bash
+  - edit
+  - create
+  - view
+  - grep
+  - glob
 ---
 
 # Documentation Agent

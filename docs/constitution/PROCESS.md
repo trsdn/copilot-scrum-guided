@@ -211,7 +211,7 @@ Backlog → Planned → In Progress → Validation → Done
 | Sprint log | `docs/sprints/sprint-N-log.md` | Sprint Start | Huddle decisions during execution |
 | Velocity data | `docs/sprints/velocity.md` | Sprint Retro | Sprint-over-sprint performance |
 | Issue comments | GitHub Issues | Huddles | Traceable audit trail per issue |
-| Agent memory | `.claude/skills/agent-memory/memories/` | Sprint Retro | Cross-session knowledge |
+| Sprint notes | `docs/sprints/` | Sprint Retro | Cross-session knowledge |
 
 ---
 

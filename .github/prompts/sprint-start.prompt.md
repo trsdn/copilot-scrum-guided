@@ -1,6 +1,6 @@
 ---
 name: sprint-start
-description: "Present execution plan, wait for PO consent, then begin sprint. Triggers on: 'sprint start', 'start sprint', 'let's begin', 'go', 'start working', 'begin sprint'."
+description: "PO-driven sprint start: present execution plan, wait for PO consent, then begin sprint execution."
 ---
 
 # Sprint Start — PO-Driven
@@ -19,14 +19,13 @@ gh issue list --label "priority:high"
 gh issue list --label "status:in-progress"
 ```
 
-Read agent memory for context from last sprint.
+Read any context from the last sprint.
 
 ## Step 2: Load Sprint Backlog
 
 Load the Planned items from the project board (set during `/sprint-planning`).
 
 Determine the sprint number from `docs/sprints/velocity.md` (increment from last sprint).
-Create SQL todos for all sprint items with dependencies.
 
 ## Step 3: Present Execution Plan
 
@@ -98,9 +97,7 @@ EOF
 
 Send notification:
 ```bash
-if [ -n "$NTFY_TOPIC" ]; then
-  curl -s -H "Title: 🚀 Sprint N Starting" -d "Goal: [theme]. Issues: #A, #B, #C..." ntfy.sh/$NTFY_TOPIC
-fi
+scripts/copilot-notify.sh "🚀 Sprint N Starting" "Goal: [theme]. Issues: #A, #B, #C..."
 ```
 
 ### 5a. Start Issue
@@ -117,11 +114,11 @@ implement → lint/type-check → write unit tests → validate → code review 
 ### 5c. Quality Gates
 
 **⛔ TEST GATE**: Every feature PR MUST include unit tests.
-- Use `test-engineer` agent after implementation, before PR
+- Use `@test-engineer` agent after implementation, before PR
 - Minimum 3 tests per feature (happy path, edge case, parameter effect)
 - Tests must verify **actual behavior**, not just "runs without error"
 
-**⛔ DEFINITION OF DONE** (see CLAUDE.md for full checklist):
+**⛔ DEFINITION OF DONE** (see copilot-instructions.md for full checklist):
 - Code + lint + types clean
 - Unit tests (min 3, behavior-verifying)
 - PR reviewed + squash-merged
@@ -177,12 +174,12 @@ Is the plan still valid?"
 
 | Task | Agent Type | Model |
 |------|-----------|-------|
-| Code implementation | `code-developer` | Sonnet |
-| Writing tests | `test-engineer` | Sonnet |
-| Code review | `code-review` | Sonnet |
-| Research/docs | `research-agent` / `documentation-agent` | Sonnet |
-| Quick file search | `explore` | Haiku (OK) |
-| Build/test commands | `task` | Haiku (OK) |
+| Code implementation | `@code-developer` | Sonnet |
+| Writing tests | `@test-engineer` | Sonnet |
+| Code review | `code-review` (built-in) | Sonnet |
+| Research/docs | `@research-agent` / `@documentation-agent` | Sonnet |
+| Quick file search | `explore` (built-in) | Haiku (OK) |
+| Build/test commands | `task` (built-in) | Haiku (OK) |
 
 **⛔ CI GATE**: After creating a PR, wait 3-5 minutes for CI. Verify green before merging.
 
