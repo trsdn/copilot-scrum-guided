@@ -136,6 +136,34 @@ Start with 5-7 issues per sprint. Adjust based on velocity data in `docs/sprints
 
 Never silently abandon an in-progress issue to chase a new idea.
 
+## Verification Before Completion
+
+**No completion claims without fresh verification evidence.**
+
+Before claiming work is complete, fixed, or passing:
+
+1. **Identify**: What command proves this claim?
+2. **Run**: Execute the full command (fresh, not cached)
+3. **Read**: Check output, exit code, failure count
+4. **Verify**: Does output confirm the claim?
+5. **Only then**: Make the claim
+
+| Claim | Requires | NOT Sufficient |
+|-------|----------|----------------|
+| "Tests pass" | Test output: 0 failures | "Should pass", previous run |
+| "Lint clean" | Linter output: 0 errors | Partial check |
+| "Bug fixed" | Regression test: red→green | "Code changed" |
+| "Build succeeds" | Build exit code 0 | "Linter passed" |
+
+## Known Agent Limitations
+
+| Issue | Workaround |
+|-------|------------|
+| Agents sometimes describe code instead of creating files | For new modules, write files directly |
+| Agents may reuse existing class/function names | Specify unique names in the prompt |
+| Agents can't create files in non-existent directories | `mkdir -p` before dispatching |
+| Agents may report "success" without completing | Verify agent output independently |
+
 ## Workflow Gates — NEVER Skip
 
 1. **Sprint Planning → PO Selects**: Present candidates, **WAIT for PO to select scope**
