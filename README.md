@@ -220,6 +220,18 @@ This data drives sprint sizing — the agent presents velocity history when prop
 └── pyproject.toml
 ```
 
+## Philosophy
+
+> **The AI-Scrum Manifesto** — see [`docs/constitution/PHILOSOPHY.md`](docs/constitution/PHILOSOPHY.md)
+
+*We have come to value:*
+- **Structured collaboration** over unguided generation
+- **Verified evidence** over claimed completion
+- **Sprint discipline** over feature chasing
+- **Continuous process improvement** over static workflows
+
+*Inspired by the [Agile Manifesto](https://agilemanifesto.org), adapted for human-AI collaboration.*
+
 ## License
 
 MIT
