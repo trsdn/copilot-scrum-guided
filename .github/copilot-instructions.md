@@ -100,18 +100,24 @@ Before claiming work is complete, fixed, or passing:
 
 ## Agent Dispatch Rules
 
-**NEVER use the generic `task` agent type (Haiku) for code changes.** It lacks reasoning capacity for multi-file edits.
+**Custom agents only have `edit` + `view` tools — NO `create`, NO `bash`.** For tasks requiring **new file creation**, use `general-purpose` agent type with the custom agent's instructions included in the prompt.
 
-| Task | Agent Type | Model | Why |
-|------|-----------|-------|-----|
-| Code changes, new modules | `code-developer` | Sonnet | Multi-file reasoning |
-| Writing tests | `test-engineer` | Sonnet | Behavior understanding |
-| Code review | `code-review` (built-in) | Sonnet | Architectural judgment |
-| Research | `research-agent` | Sonnet | Synthesis |
-| Documentation | `documentation-agent` | Sonnet | Technical writing |
-| Security audit | `security-reviewer` | Sonnet | Vulnerability analysis |
-| File search | `explore` (built-in) | Haiku | Pattern matching |
-| Running commands | `task` (built-in) | Haiku | Pass/fail only |
+| Task | Agent Type | Tools Available |
+|------|-----------|----------------|
+| Edit existing code | `code-developer` | `edit` + `view` only |
+| Create new files | `general-purpose` | Full toolset (`create`, `bash`, `edit`, `view`, `grep`, `glob`) |
+| Edit existing tests | `test-engineer` | `edit` + `view` only |
+| Create new test files | `general-purpose` | Full toolset — include test-engineer instructions in prompt |
+| Edit existing docs | `documentation-agent` | `edit` + `view` only |
+| Create new docs | `general-purpose` | Full toolset — include documentation-agent instructions in prompt |
+| Code review (read-only) | `code-review` | `edit` + `view` only |
+| Research (read-only) | `research-agent` | `edit` + `view` only |
+| Security audit (read-only) | `security-reviewer` | `edit` + `view` only |
+| Adversarial review (read-only) | `challenger` | `edit` + `view` only |
+| Board operations (needs bash) | `general-purpose` | Include board-keeper instructions |
+| CI fix (needs bash) | `general-purpose` | Include ci-fixer instructions |
+| File search | `explore` (built-in) | `grep` + `glob` + `view` |
+| Running commands | `task` (built-in) | Full CLI tools |
 
 **⛔ CI Gate**: After creating a PR, wait 3-5 minutes for CI. Verify green with `gh run list --branch <branch>` BEFORE merging.
 
