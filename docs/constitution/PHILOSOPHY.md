@@ -58,6 +58,10 @@ Every retrospective must evaluate the process itself — not just the deliverabl
 
 10. **The agent is not a junior developer — it's a different kind of collaborator.** It doesn't need motivation, but it does need constraints. It doesn't forget instructions, but it does hallucinate. Design the process for what it actually is, not what you wish it were.
 
+11. **Welcome scope changes — route them through the backlog, not mid-sprint pivots.** Changing direction is fine; abandoning work-in-progress silently is not. New ideas get an issue, a score, and a place in the next planning session. The backlog is how good ideas survive without derailing current work.
+
+12. **Simplicity — maximize the work not done.** Prefer config changes over code changes. Prefer existing tools over new ones. The best feature is the one you didn't need to build. Every line of code is a liability; every automation that replaces manual work is an asset.
+
 ---
 
 ## How This Manifesto Maps to Our Process
@@ -75,6 +79,21 @@ Every retrospective must evaluate the process itself — not just the deliverabl
 | Working software over documentation | Verified evidence over claimed completion | The agent will *say* it works — make it *prove* it works |
 | Customer collaboration over contracts | Consent gates over blind trust | The PO's approval at each phase ensures alignment |
 | Responding to change over following a plan | Sprint discipline over feature chasing | The agent *loves* to chase — the PO keeps it focused |
+
+| Agile Principle (2001) | AI-Scrum Principle (2025) | # |
+|------------------------|--------------------------|---|
+| Satisfy customer through early, continuous delivery | Small, tested diffs — one feature per PR | 1 |
+| Welcome changing requirements | Welcome scope changes — route through backlog | 11 |
+| Deliver working software frequently | Sprint cycles with CI verification | 1, 2 |
+| Business people and developers work together daily | Human brings judgment; agent brings throughput | 3 |
+| Build around motivated individuals, trust them | The agent is not a junior dev — give it constraints, not motivation | 10 |
+| Face-to-face conversation | Huddles documented in two places (issue + sprint log) | 4 |
+| Working software is primary measure of progress | Evidence before assertions, always | 7 |
+| Sustainable development, constant pace | Velocity is descriptive, not prescriptive | 9 |
+| Continuous attention to technical excellence | Quality gates are non-negotiable | 2 |
+| Simplicity — maximize work not done | Simplicity — prefer config over code, existing over new | 12 |
+| Best architectures emerge from self-organizing teams | Best architecture emerges from small, tested diffs | 1 |
+| Regularly reflect and adjust | Process improvements compound | 6 |
 
 ---
 
