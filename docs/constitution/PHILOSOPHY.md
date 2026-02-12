@@ -64,39 +64,6 @@ Every retrospective must evaluate the process itself — not just the deliverabl
 
 ---
 
-## How This Manifesto Maps to Our Process
-
-| Manifesto Value | Process Implementation |
-|----------------|----------------------|
-| Structured collaboration | PO consent gates at every ceremony |
-| Verified evidence | Verification-before-completion gate |
-| Sprint discipline | Focus protection, no mid-sprint switching |
-| Process improvement | Interactive retros where PO contributes observations |
-
-| Agile Manifesto (2001) | AI-Scrum Adaptation (2025) | Why It Changed |
-|------------------------|---------------------------|----------------|
-| Individuals and interactions over processes | Structured collaboration over unguided generation | The agent needs clear scope from the PO — not open-ended freedom |
-| Working software over documentation | Verified evidence over claimed completion | The agent will *say* it works — make it *prove* it works |
-| Customer collaboration over contracts | Consent gates over blind trust | The PO's approval at each phase ensures alignment |
-| Responding to change over following a plan | Sprint discipline over feature chasing | The agent *loves* to chase — the PO keeps it focused |
-
-| Agile Principle (2001) | AI-Scrum Principle (2025) | # |
-|------------------------|--------------------------|---|
-| Satisfy customer through early, continuous delivery | Small, tested diffs — one feature per PR | 1 |
-| Welcome changing requirements | Welcome scope changes — route through backlog | 11 |
-| Deliver working software frequently | Sprint cycles with CI verification | 1, 2 |
-| Business people and developers work together daily | Human brings judgment; agent brings throughput | 3 |
-| Build around motivated individuals, trust them | The agent is not a junior dev — give it constraints, not motivation | 10 |
-| Face-to-face conversation | Huddles documented in two places (issue + sprint log) | 4 |
-| Working software is primary measure of progress | Evidence before assertions, always | 7 |
-| Sustainable development, constant pace | Velocity is descriptive, not prescriptive | 9 |
-| Continuous attention to technical excellence | Quality gates are non-negotiable | 2 |
-| Simplicity — maximize work not done | Simplicity — prefer config over code, existing over new | 12 |
-| Best architectures emerge from self-organizing teams | Best architecture emerges from small, tested diffs | 1 |
-| Regularly reflect and adjust | Process improvements compound | 6 |
-
----
-
 ## For Your Project
 
 Below this manifesto, add your project-specific philosophy:
