@@ -53,7 +53,7 @@ Each phase is triggered manually via slash commands. The agent never auto-procee
 
 - **Same quality infrastructure** as the autonomous variant: ICE scoring, Definition of Done, quality gates, CI/CD
 - **Human control at every phase**: PO drives scope, accepts deliverables, contributes to retros
-- **Specialized agents**: Code developer, test engineer, security reviewer, documentation agent, research agent
+- **Specialized agents**: Code developer, test engineer, security reviewer, documentation agent, research agent, architect, challenger, CI fixer, board keeper
 - **Push notifications**: ntfy.sh integration for task completion and input needed alerts
 - **Sprint velocity tracking**: Data-driven sprint sizing from historical performance
 - **GitHub Issues as task system**: Project board with Backlog → Planned → In Progress → Done flow
@@ -210,7 +210,10 @@ This data drives sprint sizing — the agent presents velocity history when prop
 │   │   ├── research-agent.agent.md
 │   │   ├── architect.agent.md
 │   │   ├── release-agent.agent.md
-│   │   └── copilot-customization-builder.agent.md
+│   │   ├── copilot-customization-builder.agent.md
+│   │   ├── challenger.agent.md
+│   │   ├── ci-fixer.agent.md
+│   │   └── board-keeper.agent.md
 │   ├── prompts/                     # Reusable workflow prompts (PO consent gates)
 │   │   ├── sprint-planning.prompt.md
 │   │   ├── sprint-start.prompt.md
@@ -225,7 +228,12 @@ This data drives sprint sizing — the agent presents velocity history when prop
 │   │   ├── release-check.prompt.md
 │   │   ├── new-custom-agent.prompt.md
 │   │   ├── new-prompt-file.prompt.md
-│   │   └── new-instructions-file.prompt.md
+│   │   ├── new-instructions-file.prompt.md
+│   │   ├── direction-gate.prompt.md
+│   │   ├── subagent-dispatch.prompt.md
+│   │   ├── writing-plans.prompt.md
+│   │   ├── web-research.prompt.md
+│   │   └── issue-triage.prompt.md
 │   ├── workflows/
 │   ├── ISSUE_TEMPLATE/
 │   └── PULL_REQUEST_TEMPLATE.md

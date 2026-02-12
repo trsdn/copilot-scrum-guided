@@ -56,6 +56,9 @@ The human is the **Product Owner**. The agent is the **Scrum Master + Developmen
 | Architect | `@architect` | ADR compliance, system design review |
 | Release Agent | `@release-agent` | Versioning, changelogs, release readiness |
 | Copilot Customization Builder | `@copilot-customization-builder` | Create agents, prompts, instructions |
+| Board Keeper | `@board-keeper` | Project board hygiene |
+| Challenger | `@challenger` | Adversarial review, presents to PO |
+| CI Fixer | `@ci-fixer` | CI/CD failure diagnosis and fix |
 
 ## Available Prompts
 
@@ -75,3 +78,8 @@ The human is the **Product Owner**. The agent is the **Scrum Master + Developmen
 | `new-custom-agent` | Template for creating a new agent |
 | `new-prompt-file` | Template for creating a new prompt |
 | `new-instructions-file` | Template for creating instructions file |
+| `direction-gate` | Direction change review, PO decides |
+| `subagent-dispatch` | Execute plans with subagents |
+| `writing-plans` | Implementation plans with TDD tasks |
+| `web-research` | Structured web research |
+| `issue-triage` | Triage issues, present to PO |

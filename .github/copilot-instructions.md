@@ -55,6 +55,11 @@ Full details in `docs/architecture/ADR.md`. Record all architectural decisions t
 
 Never silently abandon an in-progress issue to chase a new idea.
 
+## Workflow Gates — NEVER Skip
+
+- **Direction Changes → Gate**: Any strategic direction change MUST go through `direction-gate` prompt, with PO approval required.
+- **Every Sprint → Challenger**: Challenger agent reviews deliverables at sprint review and scope at planning. Presents findings to PO.
+
 ## Verification Before Completion
 
 **No completion claims without fresh verification evidence.**
