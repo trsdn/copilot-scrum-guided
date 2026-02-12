@@ -30,10 +30,7 @@ See `AGENTS.md` for available agents and prompts.
 ## Development Principles
 
 - **YAGNI** — Don't build it until you need it. No speculative features, no "while we're at it" additions. If it's not in the current issue, it goes to the backlog.
-- **KISS** — Choose the simplest solution that works. Prefer config over code, stdlib over dependency, flat over nested.
-- **DRY** — Don't repeat yourself. Extract shared logic, but don't over-abstract prematurely.
 - **Boy Scout Rule** — Leave the code cleaner than you found it. Small improvements (rename, extract, simplify) are welcome in any PR — but don't bundle large refactors with feature work.
-- **Eliminate Waste** — Don't write tests that test nothing. Don't document what's obvious. Don't automate what runs once. Every artifact must earn its existence.
 
 ## Key Commands
 
