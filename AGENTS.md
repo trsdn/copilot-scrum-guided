@@ -53,6 +53,9 @@ The human is the **Product Owner**. The agent is the **Scrum Master + Developmen
 | Documentation | `@documentation-agent` | Technical docs |
 | Security Reviewer | `@security-reviewer` | Security audit |
 | Research Agent | `@research-agent` | Research topics |
+| Architect | `@architect` | ADR compliance, system design review |
+| Release Agent | `@release-agent` | Versioning, changelogs, release readiness |
+| Copilot Customization Builder | `@copilot-customization-builder` | Create agents, prompts, instructions |
 
 ## Available Prompts
 
@@ -67,3 +70,8 @@ The human is the **Product Owner**. The agent is the **Scrum Master + Developmen
 | `code-review` | Structured code review |
 | `create-pr` | Create PR with conventional title |
 | `tdd-workflow` | TDD cycle |
+| `architecture-review` | Evaluate change for ADR compliance |
+| `release-check` | Assess release readiness |
+| `new-custom-agent` | Template for creating a new agent |
+| `new-prompt-file` | Template for creating a new prompt |
+| `new-instructions-file` | Template for creating instructions file |
