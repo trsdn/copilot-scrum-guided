@@ -113,6 +113,38 @@ The agent operates as Scrum Master and development team but **never proceeds wit
 
 ---
 
+## Drift Control
+
+Even with PO consent gates, the agent must guard against drift during execution — where individually valid commits collectively move the project in an unintended direction.
+
+### Sprint Scope Lock
+
+- The agent may ONLY execute issues approved by the PO for the current sprint
+- Discovered work during execution → create a new issue in **backlog** (no status label), inform PO at next huddle
+- Self-created issues during a sprint NEVER get `status:planned` — they wait for next planning cycle
+- If >2 unplanned issues are created in a single sprint → flag to PO at next huddle
+
+### Drift Check (at every huddle)
+
+After each issue completes, the huddle MUST include this checklist:
+
+- [ ] Current issue was in the PO-approved sprint plan
+- [ ] No unplanned scope was added
+- [ ] Files changed relate to sprint issues only
+- [ ] Sprint goal is still achievable with remaining issues
+
+**⚠️ If any item is unchecked → flag to PO immediately.**
+
+### Sprint Boundary Review
+
+At sprint review, present a holistic change summary to the PO:
+
+- Total files changed across all sprint issues
+- Files changed that don't relate to any sprint issue (flag these)
+- New issues created during the sprint (planned vs unplanned)
+
+---
+
 ## Sprint Ceremonies
 
 ### Cycle

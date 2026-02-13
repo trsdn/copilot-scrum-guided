@@ -55,6 +55,10 @@ Full details in `docs/architecture/ADR.md`. Record all architectural decisions t
 
 Never silently abandon an in-progress issue to chase a new idea.
 
+### Drift Control
+
+Sprint scope is locked once the PO approves the plan. Discovered work goes to backlog — never into the current sprint. Every huddle includes a drift check. Flag any drift to the PO immediately.
+
 ## Workflow Gates — NEVER Skip
 
 - **Direction Changes → Gate**: Any strategic direction change MUST go through `direction-gate` prompt, with PO approval required.

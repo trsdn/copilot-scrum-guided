@@ -151,6 +151,7 @@ gh issue comment N --body "### Huddle — Sprint X, Issue X/Y done
 
 **Outcome**: [what was delivered]
 **Key learning**: [anything discovered]
+**Drift**: ✅ on track / ⚠️ [drift description]
 **Next**: #M — [title]"
 ```
 
@@ -162,6 +163,13 @@ gh issue comment N --body "### Huddle — Sprint X, Issue X/Y done
 ask_user: "Issue #N is done: [brief outcome]. Sprint progress: X/Y issues complete.
 
 Key learning: [anything notable]
+
+Drift check:
+- [ ] This issue was in the PO-approved sprint plan
+- [ ] No unplanned scope added
+- [ ] Files changed relate to sprint issues
+- [ ] Sprint goal still achievable
+⚠️ If any unchecked → flag to PO before continuing
 
 Next up: #M — [title]
 
