@@ -1,8 +1,7 @@
 ---
-name: New Prompt File
-description: Template for creating a new reusable workflow prompt
+name: new-prompt-file
+description: "Create new skill/prompt definition. Triggers on: 'create skill', 'new skill'."
 ---
-
 # New Prompt File
 
 Guide for creating a new reusable workflow prompt in `.github/prompts/`.

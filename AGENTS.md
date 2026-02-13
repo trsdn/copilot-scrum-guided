@@ -55,14 +55,16 @@ The human is the **Product Owner**. The agent is the **Scrum Master + Developmen
 | Research Agent | `@research-agent` | Research topics |
 | Architect | `@architect` | ADR compliance, system design review |
 | Release Agent | `@release-agent` | Versioning, changelogs, release readiness |
-| Copilot Customization Builder | `@copilot-customization-builder` | Create agents, prompts, instructions |
+| Copilot Customization Builder | `@copilot-customization-builder` | Create agents, skills, instructions |
 | Challenger | `@challenger` | Adversarial review, presents to PO |
 | CI Fixer | `@ci-fixer` | CI/CD failure diagnosis and fix |
 
-## Available Prompts
+## Available Skills
 
-| Prompt | Use For |
-|--------|---------|
+Skills are in `.github/skills/*/SKILL.md` and work in both Copilot CLI and VS Code Insiders.
+
+| Skill | Use For |
+|-------|---------|
 | `sprint-planning` | Triage backlog, PO selects scope |
 | `sprint-start` | Present plan, wait for PO "go" |
 | `sprint-review` | Demo results, PO accepts/rejects |
@@ -75,7 +77,7 @@ The human is the **Product Owner**. The agent is the **Scrum Master + Developmen
 | `architecture-review` | Evaluate change for ADR compliance |
 | `release-check` | Assess release readiness |
 | `new-custom-agent` | Template for creating a new agent |
-| `new-prompt-file` | Template for creating a new prompt |
+| `new-prompt-file` | Template for creating a new skill |
 | `new-instructions-file` | Template for creating instructions file |
 | `direction-gate` | Direction change review, PO decides |
 | `subagent-dispatch` | Execute plans with subagents |

@@ -213,26 +213,27 @@ This data drives sprint sizing — the agent presents velocity history when prop
 │   │   ├── copilot-customization-builder.agent.md
 │   │   ├── challenger.agent.md
 │   │   └── ci-fixer.agent.md
-│   ├── prompts/                     # Reusable workflow prompts (PO consent gates)
-│   │   ├── sprint-planning.prompt.md
-│   │   ├── sprint-start.prompt.md
-│   │   ├── sprint-review.prompt.md
-│   │   ├── sprint-retro.prompt.md
-│   │   ├── orchestrate-feature.prompt.md
-│   │   ├── orchestrate-bugfix.prompt.md
-│   │   ├── code-review.prompt.md
-│   │   ├── create-pr.prompt.md
-│   │   ├── tdd-workflow.prompt.md
-│   │   ├── architecture-review.prompt.md
-│   │   ├── release-check.prompt.md
-│   │   ├── new-custom-agent.prompt.md
-│   │   ├── new-prompt-file.prompt.md
-│   │   ├── new-instructions-file.prompt.md
-│   │   ├── direction-gate.prompt.md
-│   │   ├── subagent-dispatch.prompt.md
-│   │   ├── writing-plans.prompt.md
-│   │   ├── web-research.prompt.md
-│   │   └── issue-triage.prompt.md
+│   ├── skills/                      # Reusable workflow skills (works in CLI + VS Code)
+│   │   ├── sprint-planning/SKILL.md
+│   │   ├── sprint-start/SKILL.md
+│   │   ├── sprint-review/SKILL.md
+│   │   ├── sprint-retro/SKILL.md
+│   │   ├── orchestrate-feature/SKILL.md
+│   │   ├── orchestrate-bugfix/SKILL.md
+│   │   ├── code-review/SKILL.md
+│   │   ├── create-pr/SKILL.md
+│   │   ├── tdd-workflow/SKILL.md
+│   │   ├── architecture-review/SKILL.md
+│   │   ├── release-check/SKILL.md
+│   │   ├── new-custom-agent/SKILL.md
+│   │   ├── new-prompt-file/SKILL.md
+│   │   ├── new-instructions-file/SKILL.md
+│   │   ├── direction-gate/SKILL.md
+│   │   ├── subagent-dispatch/SKILL.md
+│   │   ├── writing-plans/SKILL.md
+│   │   ├── web-research/SKILL.md
+│   │   ├── issue-triage/SKILL.md
+│   │   └── refine/SKILL.md
 │   ├── workflows/
 │   ├── ISSUE_TEMPLATE/
 │   └── PULL_REQUEST_TEMPLATE.md

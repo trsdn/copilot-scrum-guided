@@ -1,8 +1,7 @@
 ---
 name: web-research
-description: "Conduct structured web research with citations and synthesis"
+description: "Structured web research approach. Triggers on: 'research', 'web research', 'look up'."
 ---
-
 # Web Research
 
 Conduct structured web research to answer questions, evaluate options, or gather information for decision-making.

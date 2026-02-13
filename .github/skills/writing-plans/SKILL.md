@@ -1,8 +1,7 @@
 ---
 name: writing-plans
-description: "Create comprehensive implementation plans with bite-sized TDD tasks"
+description: "Write implementation plans before coding. Triggers on: 'write plan', 'implementation plan', 'plan this'."
 ---
-
 # Writing Plans
 
 Create a zero-context implementation plan that any developer (human or agent) can pick up and execute without additional explanation.

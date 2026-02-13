@@ -1,8 +1,7 @@
 ---
 name: subagent-dispatch
-description: "Execute PO-approved plans by dispatching independent subagents per task"
+description: "Dispatch subagents for parallel work. Triggers on: 'dispatch subagents', 'use subagents', 'parallel execution'."
 ---
-
 # Subagent Dispatch
 
 Execute implementation plans by dispatching independent subagents for each task. Each subagent runs in a fresh context with explicit instructions.

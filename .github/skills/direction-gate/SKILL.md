@@ -1,8 +1,7 @@
 ---
 name: direction-gate
-description: "Structured review before strategic direction changes — presents analysis to PO for decision"
+description: "Evaluate strategic direction changes before execution. Triggers on: 'direction change', 'strategic decision', 'pivot'."
 ---
-
 # Direction Change Gate
 
 **MANDATORY** before any of the following:

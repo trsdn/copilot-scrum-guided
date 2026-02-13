@@ -1,8 +1,7 @@
 ---
 name: issue-triage
-description: "Triage open issues and present findings to PO for prioritization decisions"
+description: "Triage and organize GitHub issues. Triggers on: 'triage', 'triage issues', 'organize backlog'."
 ---
-
 # Issue Triage
 
 Query open GitHub issues that need attention, score them, and present findings to the PO for prioritization decisions.

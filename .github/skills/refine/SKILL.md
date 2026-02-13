@@ -1,8 +1,7 @@
 ---
 name: refine
-description: "PO-driven backlog refinement: turn ideas into concrete issues with acceptance criteria"
+description: "PO-driven backlog refinement: turn ideas into concrete issues with acceptance criteria. Triggers on: 'refine', 'refinement', 'process ideas', 'backlog refinement'."
 ---
-
 # Backlog Refinement — PO-Driven
 
 You are the **Scrum Master** running backlog refinement. The **human is the Product Owner**.

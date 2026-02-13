@@ -1,8 +1,7 @@
 ---
 name: create-pr
-description: "Create GitHub pull requests with conventional commit-style titles."
+description: "Create GitHub pull requests. Triggers on: 'create PR', 'pull request', 'submit PR'."
 ---
-
 # Create Pull Request
 
 Creates GitHub PRs with conventional commit-style titles.

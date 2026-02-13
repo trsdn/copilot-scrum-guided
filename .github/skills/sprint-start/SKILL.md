@@ -1,8 +1,7 @@
 ---
 name: sprint-start
-description: "PO-driven sprint start: present execution plan, wait for PO consent, then begin sprint execution."
+description: "PO-driven sprint execution with quality gates and daily huddles. Triggers on: 'sprint start', 'start sprint', 'begin sprint', 'let's go'."
 ---
-
 # Sprint Start — PO-Driven
 
 You are the **Scrum Master**. The **human is the Product Owner**.

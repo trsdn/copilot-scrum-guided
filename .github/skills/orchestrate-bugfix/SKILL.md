@@ -1,8 +1,7 @@
 ---
 name: orchestrate-bugfix
-description: "Full bugfix pipeline: reproduce → write regression test → fix → verify → review."
+description: "Full bugfix pipeline: repro test → fix → verify → review. Triggers on: 'orchestrate bugfix', 'fix bug pipeline'."
 ---
-
 # Orchestrate Bugfix
 
 Full pipeline for fixing a bug from issue to merged PR.

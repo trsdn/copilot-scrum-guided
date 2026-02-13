@@ -1,8 +1,7 @@
 ---
-name: New Instructions File
-description: Template for creating a new instructions file for a subdirectory
+name: new-instructions-file
+description: "Create new instructions file. Triggers on: 'create instructions', 'new instructions'."
 ---
-
 # New Instructions File
 
 Guide for creating directory-specific instructions that GitHub Copilot automatically loads.

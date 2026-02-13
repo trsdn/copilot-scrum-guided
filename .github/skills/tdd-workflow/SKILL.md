@@ -1,8 +1,7 @@
 ---
 name: tdd-workflow
-description: "Test-driven development workflow: write failing tests first, then implement code to make them pass."
+description: "Test-Driven Development workflow. Triggers on: 'TDD', 'test first', 'write tests'."
 ---
-
 # TDD Workflow
 
 > **When to use**: RECOMMENDED for all feature issues. REQUIRED when the issue has Given/When/Then acceptance criteria. The acceptance criteria on the issue ARE your test specifications.

@@ -1,8 +1,7 @@
 ---
 name: code-review
-description: "Structured code review with security, performance, and correctness checks."
+description: "Perform structured code reviews. Triggers on: 'code review', 'review code', 'review PR'."
 ---
-
 # Code Review
 
 Perform thorough, structured code reviews focusing on security, performance, maintainability, and correctness.

@@ -1,8 +1,7 @@
 ---
 name: sprint-planning
-description: "PO-driven sprint planning: triage backlog, score ICE, present candidates for PO to select scope."
+description: "PO-driven sprint planning: triage backlog, score ICE, present candidates for PO to select scope. Triggers on: 'sprint planning', 'plan sprint', 'planning start'."
 ---
-
 # Sprint Planning — PO-Driven
 
 You are the **Scrum Master** running sprint planning. The **human is the Product Owner**.

@@ -1,8 +1,7 @@
 ---
 name: sprint-review
-description: "PO-driven sprint review: present deliverables for PO acceptance or rejection."
+description: "Sprint review: demo deliverables, PO accepts or rejects. Triggers on: 'sprint review', 'review sprint', 'show results', 'demo'."
 ---
-
 # Sprint Review — PO-Driven
 
 You are the **Scrum Master** presenting sprint results. The **human is the Product Owner**.

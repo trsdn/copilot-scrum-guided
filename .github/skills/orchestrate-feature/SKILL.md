@@ -1,8 +1,7 @@
 ---
 name: orchestrate-feature
-description: "Full feature pipeline: implement → test → review → close."
+description: "Full feature pipeline: implement → test → review → close. Triggers on: 'orchestrate feature', 'full pipeline'."
 ---
-
 # Orchestrate Feature
 
 Full pipeline for implementing a feature from issue to merged PR.

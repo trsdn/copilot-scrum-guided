@@ -4,7 +4,7 @@ These instructions apply to all Copilot Chat work in this repository.
 
 See `docs/constitution/PROCESS.md` for the full development process constitution (stakeholder model, ceremonies, DoD, ICE scoring, label flow).
 
-See `AGENTS.md` for available agents and prompts.
+See `AGENTS.md` for available agents and skills.
 
 ## Project Overview
 
