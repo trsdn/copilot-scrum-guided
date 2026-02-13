@@ -150,7 +150,7 @@ At sprint review, present a holistic change summary to the PO:
 ### Cycle
 
 ```
-/sprint-planning → PO approves → /sprint-start → PO says "go" → [Execute with Huddles] → /sprint-review → PO accepts → /sprint-retro
+/refine → PO approves → /sprint-planning → PO approves → /sprint-start → PO says "go" → [Execute with Huddles] → /sprint-review → PO accepts → /sprint-retro
 ```
 
 ### Ceremony Rules
@@ -164,6 +164,7 @@ At sprint review, present a holistic change summary to the PO:
 | **Execute** | CI | Wait for CI green before merging. Never merge on red |
 | **Review** | PO Accepts | Present deliverables → **PO explicitly accepts or rejects** |
 | **Retro** | Interactive | Each section: present → **ask PO for input** → proceed |
+| **Refinement** | PO Approves | PO selects ideas, agent researches and proposes decomposition, PO approves |
 
 ### Sprint Sizing
 
@@ -202,6 +203,14 @@ Bad: "Improve the scoring system"
 Good: "Add weighted decay to score_candidates(). Input: list[Candidate], decay_factor: float. Output: sorted list. Acceptance: scores decrease by decay_factor per period. Tests: 3 cases (no decay, 50% decay, full decay)."
 
 The PO and agent agree on acceptance criteria during sprint planning. The agent MUST NOT start implementing an issue that lacks them.
+
+### Idea Labels
+
+| Label | Meaning |
+|-------|---------|
+| `type:idea` | Lightweight idea from stakeholder — needs refinement before sprint planning |
+
+**Idea lifecycle**: PO creates `type:idea` issue (1-2 sentences) → `/refine` decomposes it with PO approval → concrete issues created in backlog → idea closed as refined
 
 ### Label Flow
 

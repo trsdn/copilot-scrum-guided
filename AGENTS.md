@@ -82,3 +82,4 @@ The human is the **Product Owner**. The agent is the **Scrum Master + Developmen
 | `writing-plans` | Implementation plans with TDD tasks |
 | `web-research` | Structured web research |
 | `issue-triage` | Triage issues, present to PO |
+| `refine` | Backlog Refinement — turn `type:idea` issues into concrete backlog items with PO approval |
