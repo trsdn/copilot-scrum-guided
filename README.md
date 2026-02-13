@@ -61,6 +61,16 @@ Each phase is triggered manually via slash commands. The agent never auto-procee
 - **Sprint velocity tracking**: Data-driven sprint sizing from historical performance
 - **GitHub Issues as task system**: Labels (`status:planned` → `status:in-progress` → `status:validation` → closed) + Milestones for sprint grouping
 
+## Prerequisites
+
+- **GitHub Copilot subscription** (Pro, Pro+, Business, or Enterprise) — [plans](https://github.com/features/copilot/plans)
+- **Copilot CLI** installed — [installation guide](https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli)
+- **Experimental mode** (optional but recommended) — enables Autopilot mode for longer tasks:
+  ```bash
+  copilot --experimental    # Enable on first launch (persisted in config)
+  ```
+  Press `Shift+Tab` inside a session to cycle between Interactive, Plan, and Autopilot modes.
+
 ## Getting Started
 
 ### 1. Use this template
