@@ -1,10 +1,13 @@
 # Copilot Scrum Guided
 
-> **Optimized for GitHub Copilot CLI**
+[![Optimized for GitHub Copilot CLI](https://img.shields.io/badge/Optimized%20for-GitHub%20Copilot%20CLI-blue?logo=github)](https://docs.github.com/en/copilot)
+[![Framework Docs](https://img.shields.io/badge/Framework-AI--Scrum-6c63ff)](https://trsdn.github.io/ai-scrum/)
 
 A template repository for **PO-driven Scrum development** powered by GitHub Copilot CLI. The human is the Product Owner who manually drives each sprint phase. The agent is the Scrum Master + development team but always waits for PO approval before proceeding.
 
 > See [copilot-scrum-autonomous](https://github.com/trsdn/copilot-scrum-autonomous) for the autonomous variant where the agent also acts as PO.
+>
+> 📖 **[Read the full framework documentation →](https://trsdn.github.io/ai-scrum/)**
 
 ## Operating Model
 
