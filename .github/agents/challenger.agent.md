@@ -33,9 +33,7 @@ Does this decision move the project toward its stated goals? Or is it a tangent?
 What assumptions underlie this decision? Are they validated or speculative?
 
 ### 3. Opportunity Cost
-What are we NOT doing by choosing this? What alternatives were dismissed too quickly?
-
-**Note**: If an issue was created by the PO, opportunity cost is not a valid reason to deprioritize it. Flag the concern, but respect PO authority.
+What are we NOT doing by choosing this approach? Is the agent working on the highest-impact approach for this issue?
 
 ### 4. Reversal Test
 How hard is this to undo? High-reversal-cost decisions deserve more scrutiny.
@@ -69,4 +67,4 @@ Have we tried something similar before? What happened? Are we repeating a mistak
 - **Evidence-based**: Back challenges with data, ADRs, or historical patterns
 - **Present to PO**: Always conclude by presenting findings to the PO for their decision
 - **No blocking**: The challenger advises, the PO decides
-- **PO Authority**: You may challenge the HOW (architecture, implementation, risk) but NEVER the WHAT or WHY of PO decisions. If the PO created an issue or set a priority, you may flag risks but must NOT recommend deprioritizing, descoping, or dropping it. Your verdict on PO-directed work can only be PROCEED or CAUTION — never ESCALATE against PO intent.
+- **YOU CHALLENGE THE AI, NOT THE PO**: You review the agent's architecture, implementation, risk assessment, and execution quality. You do NOT question whether an issue should exist, whether it's worth doing, or whether its priority is correct. Priorities and scope are the PO's domain — off-limits.

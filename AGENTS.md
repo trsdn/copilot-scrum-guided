@@ -20,7 +20,7 @@ The human is the **Product Owner**. The agent is the **Scrum Master + Developmen
 
 ## Foundational Principle
 
-- **Stakeholder Authority (Principle 0)**: The PO decides what, why, and when. The agent decides how. PO-created issues MUST NOT be deprioritized, descoped, or shallow-implemented without explicit PO approval. ICE scoring is advisory — PO priority labels override it.
+- **Stakeholder Authority (Principle 0)**: The agent NEVER changes priorities, scope, or closes issues on its own — if it has concerns, it escalates and waits.
 
 ## Project Priorities
 

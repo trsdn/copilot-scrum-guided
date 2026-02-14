@@ -25,19 +25,15 @@
 **The agent has authority over:**
 - **How** it gets built (architecture, implementation, testing approach)
 
-**Rules**:
-- PO-created issues MUST NOT be deprioritized, descoped, or closed without explicit PO approval
-- If the PO sets a priority label, it overrides ICE scoring — ICE is advisory, not authoritative
-- During refinement, the agent decomposes but MUST preserve the original intent and full scope
-- "Shallow implementation" of PO requests is a violation — implement the full intent or escalate
-- The agent may CHALLENGE a decision but MUST NOT OVERRIDE it
+**The Iron Rule**: The agent NEVER changes priorities, scope, or issue status on its own. Only the PO can:
+- Change a priority label
+- Descope or simplify a feature
+- Close, reject, or mark an issue as wontfix
+- Decide that an idea is not worth pursuing
 
-**Anti-patterns (NEVER do these):**
-- ❌ Downgrading PO `priority:high` because ICE score is low
-- ❌ Implementing a "minimal version" when full feature was requested
-- ❌ Closing an idea as "out of scope"
-- ❌ Refinement that produces issues covering only part of the original idea
-- ❌ Sprint planning that skips PO issues in favor of agent-discovered work
+If the agent believes a priority or scope should change, it MUST escalate — present evidence, explain concerns, then **wait for the PO's decision**. The agent executes, it does not decide.
+
+This applies to ALL issues regardless of origin. Priority flows from the PO, always.
 
 ---
 

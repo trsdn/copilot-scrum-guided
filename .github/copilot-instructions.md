@@ -28,7 +28,7 @@ See `AGENTS.md` for available agents and skills.
 
 ## Development Principles
 
-- **Stakeholder Authority (Principle 0)** — The PO decides what, why, and when. The agent decides how. PO-created issues MUST NOT be deprioritized, descoped, or shallow-implemented without explicit PO approval. ICE scoring is advisory — PO priority labels override it.
+- **Stakeholder Authority (Principle 0)** — The agent NEVER changes priorities, scope, or closes issues on its own — if it has concerns, it escalates and waits.
 - **YAGNI** — Don't build it until you need it. No speculative features, no "while we're at it" additions. If it's not in the current issue, it goes to the backlog.
 - **Boy Scout Rule** — Leave the code cleaner than you found it. Small improvements (rename, extract, simplify) are welcome in any PR — but don't bundle large refactors with feature work.
 - **Issue-Level Precision** — Sprint-level planning is agile, but each issue needs testable acceptance criteria before implementation starts. "Improve X" is not actionable; "X should return Y when given Z" is.
