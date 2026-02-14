@@ -18,6 +18,10 @@ The human is the **Product Owner**. The agent is the **Scrum Master + Developmen
 - Sprint Review: agent presents results → **PO accepts or rejects**
 - Sprint Retro: interactive → **PO contributes observations**
 
+## Foundational Principle
+
+- **Stakeholder Authority (Principle 0)**: The PO decides what, why, and when. The agent decides how. PO-created issues MUST NOT be deprioritized, descoped, or shallow-implemented without explicit PO approval. ICE scoring is advisory — PO priority labels override it.
+
 ## Project Priorities
 
 1. **Robustness over speed**: Avoid changes that fix one thing but break others

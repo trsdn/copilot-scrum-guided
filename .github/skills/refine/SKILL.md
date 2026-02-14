@@ -34,6 +34,8 @@ Present the list to the PO:
 
 ### 2b. Decompose
 
+**⚠️ Stakeholder Authority**: Decomposition MUST preserve the PO's original intent and full scope. The resulting issues must collectively cover 100% of the idea — partial refinement is a violation. If full scope isn't feasible, escalate to PO rather than silently descoping.
+
 Break the idea into 3-8 concrete issues. Each issue MUST have:
 
 - **Clear title** (imperative: "Add X", "Implement Y")

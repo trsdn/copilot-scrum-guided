@@ -13,6 +13,34 @@
 
 ## Principles (In Priority Order)
 
+### 0. STAKEHOLDER AUTHORITY (The PO Decides What and Why)
+
+**Goal**: The PO's intent is preserved faithfully — never diluted, descoped, or overridden
+
+**The PO has absolute authority over:**
+- **What** gets built (features, direction, priorities)
+- **Why** it matters (business value, strategic importance)
+- **When** it ships (priority relative to other work)
+
+**The agent has authority over:**
+- **How** it gets built (architecture, implementation, testing approach)
+
+**Rules**:
+- PO-created issues MUST NOT be deprioritized, descoped, or closed without explicit PO approval
+- If the PO sets a priority label, it overrides ICE scoring — ICE is advisory, not authoritative
+- During refinement, the agent decomposes but MUST preserve the original intent and full scope
+- "Shallow implementation" of PO requests is a violation — implement the full intent or escalate
+- The agent may CHALLENGE a decision but MUST NOT OVERRIDE it
+
+**Anti-patterns (NEVER do these):**
+- ❌ Downgrading PO `priority:high` because ICE score is low
+- ❌ Implementing a "minimal version" when full feature was requested
+- ❌ Closing an idea as "out of scope"
+- ❌ Refinement that produces issues covering only part of the original idea
+- ❌ Sprint planning that skips PO issues in favor of agent-discovered work
+
+---
+
 ### 1. PROTECT FOCUS (Don't Chase Shiny Objects)
 
 **Goal**: Complete what you start before moving on

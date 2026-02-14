@@ -84,6 +84,8 @@ ask_user: "Which of these issues should go into Sprint N?"
 
 **WAIT for PO to select scope.** Do NOT proceed until the PO responds.
 
+**⚠️ Stakeholder Authority**: PO-created issues with priority labels MUST appear in sprint candidates — ICE scoring cannot override PO priorities. Never skip PO issues in favor of agent-discovered work.
+
 If PO says "let me pick individually", present each issue and ask yes/no.
 
 ### Acceptance Criteria Gate
