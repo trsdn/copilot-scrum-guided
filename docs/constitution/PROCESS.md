@@ -25,11 +25,13 @@
 **The agent has authority over:**
 - **How** it gets built (architecture, implementation, testing approach)
 
-**The Iron Rule**: The agent NEVER changes priorities, scope, or issue status on its own. Only the PO can:
+**The Iron Rule**: The agent NEVER changes priorities, scope, or rejects work on its own. Only the PO can:
 - Change a priority label
 - Descope or simplify a feature
-- Close, reject, or mark an issue as wontfix
+- Reject, defer, or mark an issue as wontfix
 - Decide that an idea is not worth pursuing
+
+Normal workflow status changes are fine — moving issues through `planned → in-progress → validation → closed` as work completes is expected. What the agent must NOT do is **unilaterally decide that something shouldn't be done.**
 
 If the agent believes a priority or scope should change, it MUST escalate — present evidence, explain concerns, then **wait for the PO's decision**. The agent executes, it does not decide.
 
