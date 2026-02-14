@@ -91,6 +91,25 @@ This applies to ALL issues regardless of origin. Priority flows from the PO, alw
 
 ---
 
+### 5. PROCESS OVER SPEED (Never Optimize Away the Process)
+
+**Goal**: The development process protects quality, traceability, and stakeholder oversight. It is never bypassed for speed.
+
+**Rules**:
+- Every code change goes through: feature branch → PR → CI green → squash-merge
+- Never push directly to main. Never use `--no-verify`. Never skip CI.
+- "Small fix" or "quick change" is not an excuse — the process IS the small fix
+- Autonomy mode does NOT mean process-free mode. It means autonomous *within* the process
+- If the process feels slow, improve it (Principle 4). Never bypass it.
+
+**Anti-patterns:**
+- ❌ "This is just a one-liner, I'll push directly" → Create branch + PR
+- ❌ "CI is slow, I'll merge and fix later" → Wait for CI green
+- ❌ "I'll batch 5 issues into one commit to save time" → One issue, one branch, one PR
+- ❌ "Pre-commit hooks are failing, I'll skip them" → Fix the errors
+
+---
+
 ## Stakeholder Model — PO-DRIVEN (GUIDED)
 
 ### Roles
@@ -120,6 +139,7 @@ The agent operates as Scrum Master and development team but **never proceeds wit
 
 | Action | Why |
 |--------|-----|
+| Bypass process (push to main, skip PR/CI) | Process integrity is non-negotiable |
 | Select sprint scope | PO chooses which issues to work on |
 | Start coding | PO must say "go" first |
 | Accept deliverables | PO must explicitly accept or reject |
