@@ -82,6 +82,16 @@ Before claiming work is complete, fixed, or passing:
 | "Lint clean" | Linter output: 0 errors | Partial check |
 | "Bug fixed" | Regression test: red→green | "Code changed" |
 | "Build succeeds" | Build exit code 0 | "Linter passed" |
+| "CI green" | `gh run list --branch <branch>` shows ✓ | "I pushed, should be fine" |
+| "PR ready to merge" | CI green + review done | "PR created" |
+
+### CI Pipeline
+
+```
+✅ Wait 3-5 min → `gh run list --branch <branch> --limit 3` → all ✓ → "CI green"
+❌ "I pushed, CI should pass" / "Tests passed locally"
+❌ Merging without checking CI status
+```
 
 ## Known Agent Limitations
 
@@ -142,7 +152,14 @@ Custom agents **cannot** `create` files. Use one of these patterns:
 1. **Pre-create**: `mkdir -p dir/ && create` stub files, then dispatch custom agent to edit them
 2. **General-purpose with instructions**: Use `general-purpose` agent type and include the custom agent's instructions in the prompt
 
-**⛔ CI Gate**: After creating a PR, wait 3-5 minutes for CI. Verify green with `gh run list --branch <branch>` BEFORE merging.
+**⛔ CI Gate — Enforcement** (not advisory — this is a hard gate):
+1. After creating a PR, **wait 3-5 minutes** for CI pipeline to complete
+2. Run: `gh run list --branch <branch> --limit 3`
+3. ALL checks must show ✓ (green). If any show ✗ (red):
+   - Run `gh run view <run-id> --log-failed` to get failure details
+   - Fix the issue on the branch, push, and wait for CI again
+4. **Do NOT merge on red. No exceptions.**
+5. Only after CI is green: `gh pr merge <number> --squash --delete-branch`
 
 ## Notifications (ntfy)
 

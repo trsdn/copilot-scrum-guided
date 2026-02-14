@@ -59,6 +59,18 @@ The human is the **Product Owner**. The agent is the **Scrum Master + Developmen
 | Challenger | `@challenger` | Adversarial review, presents to PO |
 | CI Fixer | `@ci-fixer` | CI/CD failure diagnosis and fix |
 
+## ⛔ CI Gate — Enforcement
+
+After creating a PR, you MUST verify CI before merging:
+
+1. Wait 3-5 minutes for CI pipeline to complete
+2. Run: `gh run list --branch <branch> --limit 3`
+3. ALL checks must show ✓ (green). If any show ✗ (red):
+   - Run `gh run view <run-id> --log-failed` to get failure details
+   - Fix the issue on the branch, push, and wait for CI again
+4. **Do NOT merge on red. No exceptions.**
+5. Only after CI is green: `gh pr merge <number> --squash --delete-branch`
+
 ## Available Skills
 
 Skills are in `.github/skills/*/SKILL.md` and work in both Copilot CLI and VS Code Insiders.
