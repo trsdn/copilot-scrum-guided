@@ -87,3 +87,36 @@ class TestFeatureName:
 - [ ] Test file created before implementation file
 - [ ] Tests run and fail for the right reason
 - [ ] Edge cases identified and have tests
+
+## Test Quality — The Point of TDD
+
+TDD exists to **prove the code works correctly**, not to generate coverage numbers. Every test must answer: "What would break if this code were wrong?"
+
+### Bad Tests (NEVER write these)
+
+```python
+# ❌ Only checks it doesn't crash
+def test_feature_runs():
+    result = do_something(input)
+    assert result is not None
+
+# ❌ Checks type instead of value
+def test_returns_list():
+    result = process(data)
+    assert isinstance(result, list)
+
+# ❌ Mocks so much that nothing real is tested
+def test_with_everything_mocked(mocker):
+    mocker.patch("module.dep1", return_value=fake1)
+    mocker.patch("module.dep2", return_value=fake2)
+    result = module.run()  # what are we testing?
+    assert result == fake2
+```
+
+### The Litmus Test
+
+For every test, ask: **"If I introduced a bug that changed the output, would this test catch it?"**
+
+If the answer is no, the test is coverage theater. Rewrite it.
+
+Coverage is a side effect of good tests, not a goal.
